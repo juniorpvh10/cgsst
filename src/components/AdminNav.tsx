@@ -112,7 +112,7 @@ export default function AdminNav() {
             </Typography>
             <List sx={{ pb: 1 }}>
               {group.items.map((item) => {
-                const active = isActive(item.href, item.exact)
+                const active = isActive(item.href, (item as any).exact)
                 return (
                   <ListItem key={item.href} disablePadding sx={{ mb: 0.5 }}>
                     <ListItemButton
