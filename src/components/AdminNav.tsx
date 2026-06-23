@@ -92,7 +92,7 @@ export default function AdminNav() {
           <SecurityIcon fontSize="small" />
         </Avatar>
         <Box sx={{ flex: 1, minWidth: 0, overflow: 'hidden' }}>
-          <Typography variant="subtitle1" fontWeight="bold" noWrap sx={{ lineHeight: 1.2, color: '#ffffff', letterSpacing: '-0.02em', fontSize: '18px' }}>
+          <Typography variant="subtitle1" noWrap sx={{ fontWeight: 'bold', lineHeight: 1.2, color: '#ffffff', letterSpacing: '-0.02em', fontSize: '18px' }}>
             CG SST
           </Typography>
           <Typography variant="caption" noWrap sx={{ display: 'block', color: '#94a3b8', fontWeight: 500, fontSize: '13px' }}>
@@ -155,7 +155,7 @@ export default function AdminNav() {
                       <ListItemText
                         disableTypography
                         primary={
-                          <Typography variant="body2" fontWeight={active ? 600 : 500} sx={{ fontSize: '1rem' }}>
+                          <Typography variant="body2" sx={{ fontWeight: active ? 600 : 500, fontSize: '1rem' }}>
                             {item.label}
                           </Typography>
                         }
