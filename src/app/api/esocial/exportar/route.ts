@@ -48,7 +48,7 @@ export async function GET(request: Request) {
         cpf: func.cpf,
         cargo: func.cargo,
         setor: func.setor,
-        matricula: func.matricula || undefined,
+        matricula: undefined,
       }
 
       // Buscar Exames
