@@ -26,7 +26,7 @@ export const Empresas: CollectionConfig = {
       required: true,
       unique: true,
       label: 'CNPJ',
-      validate: (val: string) => {
+      validate: (val: string | null | undefined) => {
         if (!val) return true
         return /^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$|^\d{14}$/.test(val) || 'Apenas números ou formato CNPJ (00.000.000/0000-00)'
       },
@@ -56,7 +56,7 @@ export const Empresas: CollectionConfig = {
       name: 'contato',
       type: 'text',
       label: 'Contato',
-      validate: (val: string) => {
+      validate: (val: string | null | undefined) => {
         if (!val) return true
         const plain = val.replace(/\D/g, '')
         return plain.length >= 10 || 'Telefone inválido. Digite o DDD e o número corretamente.'

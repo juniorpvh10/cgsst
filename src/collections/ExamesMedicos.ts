@@ -77,7 +77,7 @@ export const ExamesMedicos: CollectionConfig = {
       name: 'crmMedico',
       type: 'text',
       label: 'CRM do Médico Examinador',
-      validate: (val: string) => {
+      validate: (val: string | null | undefined) => {
         if (!val) return true
         return /^[A-Za-z0-9]+$/.test(val) || 'Apenas números e letras permitidos no CRM (sem símbolos)'
       },
@@ -89,7 +89,7 @@ export const ExamesMedicos: CollectionConfig = {
       admin: {
         description: 'Exemplo: RO, SP, RJ',
       },
-      validate: (val: string) => {
+      validate: (val: string | null | undefined) => {
         if (!val) return true
         return /^[A-Za-z]{2}$/.test(val) || 'A UF deve conter exatamente 2 letras (Ex: SP)'
       },

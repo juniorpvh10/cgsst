@@ -26,7 +26,7 @@ export const Funcionarios: CollectionConfig = {
       required: true,
       unique: true,
       label: 'CPF',
-      validate: (val: string) => {
+      validate: (val: string | null | undefined) => {
         if (!val) return true
         return /^\d{3}\.\d{3}\.\d{3}\-\d{2}$|^\d{11}$/.test(val) || 'Apenas números ou formato CPF válido (000.000.000-00)'
       },
@@ -41,7 +41,7 @@ export const Funcionarios: CollectionConfig = {
       type: 'text',
       required: true,
       label: 'Nome Completo',
-      validate: (val: string) => {
+      validate: (val: string | null | undefined) => {
         if (!val) return true
         return /^[A-Za-zÀ-ÖØ-öø-ÿ\s'´\-]+$/.test(val) || 'O nome deve conter apenas letras e espaços (sem números)'
       },
