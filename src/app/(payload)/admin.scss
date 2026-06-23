@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* 
+  Payload 3 CSS Overrides 
+  This cleanly overrides CSS variables without breaking the layout.
+*/
+
+:root {
+  /* Use Inter font globally */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif !important;
+
+  /* Theme Colors (Light Theme) */
+  --theme-bg: #f8fafc;
+  --theme-elevation-50: #ffffff;
+  --theme-elevation-100: #f1f5f9;
+  --theme-elevation-150: #e2e8f0;
+  --theme-elevation-200: #cbd5e1;
+  --theme-elevation-250: #94a3b8;
+  --theme-elevation-300: #64748b;
+  --theme-elevation-400: #475569;
+  --theme-elevation-500: #334155;
+  --theme-elevation-800: #0f172a;
+  
+  --theme-text: #0f172a;
+  --theme-text-dim: #475569;
+
+  /* Primary Accent Colors (Blue Gradient/Solid) */
+  --theme-success-400: #2563eb;
+  --theme-success-500: #1d4ed8;
+
+  /* Button Overrides */
+  --btn-bg: #2563eb;
+  --btn-text: #ffffff;
+  --btn-border: #2563eb;
+  --btn-hover-bg: #1d4ed8;
+  --btn-hover-border: #1d4ed8;
+  
+  /* Radii for modern look */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* Specific Cleanups */
+body {
+  font-family: var(--font-body);
+  background-color: var(--theme-bg);
+}
+
+/* App Header cleanup */
+.app-header {
+  border-bottom: 1px solid var(--theme-elevation-150);
+  background: var(--theme-elevation-50);
+}
+
+/* Nav Menu Cleanup */
+.nav {
+  background: #0a0f1e !important;
+  border-right: 1px solid #1e293b !important;
+}
+
+/* Buttons */
+.btn--style-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2) !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease;
+}
+.btn--style-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+  transform: translateY(-1px);
+}
+
+/* Fix missing icons padding / spacing */
+.list-create-new-doc__create-new-button span {
+  display: inline-block !important;
+}
+
+/* Tables and Cards */
+.table-wrap {
+  border-radius: var(--radius-lg);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border: 1px solid var(--theme-elevation-150);
+}
+
+.table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--theme-elevation-400);
+}
+
+/* Input Fields */
+input[type="text"], input[type="email"], input[type="password"],
+input[type="number"], input[type="date"], input[type="search"], select, textarea {
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--theme-elevation-200) !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
+  font-family: var(--font-body);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15) !important;
+  outline: none !important;
+}
