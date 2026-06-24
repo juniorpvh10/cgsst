@@ -5,6 +5,7 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import { pt } from '@payloadcms/translations/languages/pt'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
 
 import { Users } from './src/collections/Users'
 import { Empresas } from './src/collections/Empresas'
@@ -23,6 +24,20 @@ export default buildConfig({
   routes: {
     api: '/api/payload',
   },
+  email: process.env.SMTP_HOST
+    ? nodemailerAdapter({
+        defaultFromAddress: process.env.SMTP_FROM_EMAIL || 'nao-responda@cgsst.com.br',
+        defaultFromName: process.env.SMTP_FROM_NAME || 'CG SST',
+        transportOptions: {
+          host: process.env.SMTP_HOST,
+          port: Number(process.env.SMTP_PORT || 587),
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+          },
+        },
+      })
+    : undefined,
   i18n: {
     supportedLanguages: { pt },
     fallbackLanguage: 'pt',
