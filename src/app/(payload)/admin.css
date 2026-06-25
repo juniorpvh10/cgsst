@@ -88,7 +88,7 @@ body {
   border: 1px solid #e2e8f0 !important; /* Soft border */
   box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02) !important; /* Diffuse modern shadow */
   background-color: #fff !important;
-  overflow: hidden !important; /* Keep borders rounded for content inside */
+  overflow: auto !important; /* Allowed horizontal scrollbar for mobile responsiveness */
 }
 
 .table th {
@@ -612,4 +612,76 @@ input::-ms-clear {
 .password-toggle-btn:focus-visible {
   color: var(--mui-primary, #2563eb) !important;
   outline: 2px solid var(--mui-primary, #2563eb) !important;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVENESS OVERRIDES
+   ========================================================== */
+
+/* Fix the header overlapping with the floating mobile drawer menu button */
+@media (max-width: 959px) {
+  .app-header {
+    padding-left: 64px !important; /* Make room for the menu button */
+  }
+}
+
+/* Responsive Search and Filters */
+@media (max-width: 768px) {
+  .search-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .search-filter {
+    width: 100% !important;
+  }
+
+  .list-controls__buttons {
+    margin-left: 0 !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .list-controls__buttons button {
+    flex: 1 1 calc(50% - 8px) !important; /* Take half width on mobile */
+    justify-content: center !important;
+    height: 44px !important;
+  }
+  
+  .template-default__wrap {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* Responsive Login Page Wrap */
+.login {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.login__wrap {
+  width: 100% !important;
+  max-width: 420px !important;
+  padding: 36px 24px !important;
+  border-radius: var(--radius-lg) !important;
+  background-color: #ffffff !important;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.01) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 480px) {
+  .login__wrap {
+    padding: 28px 16px !important;
+  }
 }

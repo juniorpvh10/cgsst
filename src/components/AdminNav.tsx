@@ -167,6 +167,38 @@ export default function AdminNav() {
             </List>
           </React.Fragment>
         ))}
+        <Divider sx={{ borderColor: 'rgba(255,255,255,0.08)', my: 2 }} />
+        <List sx={{ pb: 2 }}>
+          <ListItem disablePadding>
+            <ListItemButton
+              component="a"
+              href="/admin/logout"
+              sx={{
+                borderRadius: '10px',
+                py: 1,
+                color: '#f87171',
+                transition: 'all 0.2s ease',
+                '&:hover': {
+                  bgcolor: 'rgba(239, 68, 68, 0.1)',
+                  color: '#ef4444',
+                  transform: 'translateX(2px)',
+                },
+              }}
+            >
+              <ListItemIcon sx={{ minWidth: 40, color: 'inherit' }}>
+                <ExitToAppIcon />
+              </ListItemIcon>
+              <ListItemText
+                disableTypography
+                primary={
+                  <Typography variant="body2" sx={{ fontWeight: 600, fontSize: '1rem' }}>
+                    Sair
+                  </Typography>
+                }
+              />
+            </ListItemButton>
+          </ListItem>
+        </List>
       </Box>
     </Box>
   )
