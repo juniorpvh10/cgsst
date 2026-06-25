@@ -565,3 +565,51 @@ body .search-filter input[type="text"],
   transform: translateY(-1px) !important;
   box-shadow: 0 3px 6px rgba(0,0,0,0.04) !important;
 }
+
+/* Custom Password Toggle Styling */
+.field-type.password .field-type__wrap,
+.form-login .field-type.password .field-type__wrap {
+  position: relative !important;
+}
+
+.field-type.password input[type="password"],
+.field-type.password input[type="text"] {
+  padding-right: 44px !important;
+}
+
+/* Hide native Edge/Chrome password reveal/caps-lock warning button */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none !important;
+}
+
+.password-toggle-btn {
+  position: absolute !important;
+  right: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  padding: 4px !important;
+  color: #64748b !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s ease !important;
+  z-index: 10 !important;
+  outline: none !important;
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.password-toggle-btn:hover {
+  color: var(--mui-primary, #2563eb) !important;
+  background-color: rgba(37, 99, 235, 0.08) !important;
+}
+
+.password-toggle-btn:focus-visible {
+  color: var(--mui-primary, #2563eb) !important;
+  outline: 2px solid var(--mui-primary, #2563eb) !important;
+}
