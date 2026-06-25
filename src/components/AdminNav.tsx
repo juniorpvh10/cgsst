@@ -213,16 +213,18 @@ export default function AdminNav() {
           onClick={handleDrawerToggle}
           sx={{
             position: 'fixed',
-            top: 12,
-            left: 12,
+            top: 10,
+            left: 10,
+            width: 48,
+            height: 48,
             zIndex: theme.zIndex.drawer + 1,
             bgcolor: 'background.paper',
-            boxShadow: 2,
+            boxShadow: 3,
             color: '#0f172a',
             '&:hover': { bgcolor: '#f1f5f9' },
           }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ fontSize: 28 }} />
         </IconButton>
       )}
 
